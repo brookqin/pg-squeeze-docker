@@ -79,6 +79,7 @@ jobs:
           tags: |
             type=schedule,pattern=${{ env.PGVERSION }}-alpine
             type=schedule,pattern={{date 'YYYYMMDD'}}
+            type=ref,event=workflow_dispatch,suffix=-${{ env.PGVERSION }}-alpine
           flavor: |
             latest=false
 
