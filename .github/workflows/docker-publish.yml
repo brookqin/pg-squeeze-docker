@@ -77,9 +77,8 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=schedule,pattern=${{ env.PGVERSION }}-alpine
+            type=raw,value=${{ env.PGVERSION }}-alpine
             type=schedule,pattern={{date 'YYYYMMDD'}}
-            type=ref,event=workflow_dispatch,suffix=-${{ env.PGVERSION }}-alpine
           flavor: |
             latest=false
 
