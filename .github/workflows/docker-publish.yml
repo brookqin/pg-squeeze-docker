@@ -70,6 +70,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=${{ env.PGVERSION }}-alpine
+            type=raw,value=latest,enable=${{ env.PGVERSION == '16' }}
           flavor: |
             latest=false
 
